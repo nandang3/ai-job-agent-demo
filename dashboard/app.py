@@ -39,15 +39,23 @@ else:
         # AI query filter
         if query:
 
-            query_lower = query.lower()
+    query_words = query.lower().split()
 
-            jobs = [
-                j for j in jobs
-                if query_lower in j["title"].lower()
-                or query_lower in j["company"].lower()
-                or query_lower in j["location"].lower()
-            ]
+    filtered_jobs = []
 
+    for job in jobs:
+
+        text = (
+            job["title"].lower() +
+            job["company"].lower() +
+            job["location"].lower()
+        )
+
+        if any(word in text for word in query_words):
+
+            filtered_jobs.append(job)
+
+    jobs = filtered_jobs
         st.success(f"{len(jobs)} jobs loaded")
 
         for job in jobs:
