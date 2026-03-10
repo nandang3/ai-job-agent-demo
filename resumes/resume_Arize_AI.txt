@@ -1,0 +1,127 @@
+
+Nandan Gururaj                                                                                                                                     https://www.linkedin.com/in/nandan-gururaj 
+Fremont, California                                                                                                                                     (213) 509 6630  ∙ nandangururaj@gmail.com  
+
+Summary: 
+Product leader specializing in AI-powered platforms, data infrastructure, and experimentation systems that drive measurable business impact. Track 
+record of building 0→1 products and optimizing platforms for growth, delivering $10M+ in revenue, $5M+ in cost savings, and 5X improvements 
+in experimentation velocity. Expert in translating technical requirements into strategic roadmaps while partnering across engineering, data science, 
+and GTM teams. 
+
+Professional Experience 
+Staff Product Manager, AI & Data Products | Foodsmart, San Francisco, CA | June 2025 – December 2025 
+Owned strategy and execution for analytics, and AI-powered decision systems supporting operations, revenue workflows, and internal engineering 
+teams. 
+•  Launched AI-powered autonomous calling system for onboarding and scheduling, projected to save $3.5M annually while increasing call volume 
+
+40% and improving conversion rates 
+
+•  Shipped self-serve analytics platform (Member 360) integrating behavioral data and ML-based scoring to empower operations teams, driving 22% 
+
+reactivation of inactive members and 18% conversion improvement 
+
+•  Shipped  real-time  AI  translation  for  live  consultations  using  NLP,  eliminating  $1.8M  in  annual  interpretation  costs  while  improving  care 
+
+accessibility and quality 
+
+•  Delivered AI-assisted clinical charting using NLP, improving productivity by 40% and reducing documentation time  
+•  Deployed predictive attendance models optimizing outreach prioritization and reducing call-center costs by 25% 
+
+Data Product Consultant | Independent, San Francisco, CA | November 2023 – June 2025                                                                                                                                           
+Advised 4 early-stage startups on building scalable analytics infrastructure and experimentation design, reducing reporting discrepancies by 35% and 
+establishing single source of truth for business metrics  
+•  Built AI-powered forecasting and validation tools using NLP, enabling probabilistic scenario planning 
+•  Established experimentation frameworks enabling clients to run 3X more tests with higher statistical confidence 
+
+Sr. Product Manager, Product Strategy & Analytics | Malwarebytes, Santa Clara, CA | September 2020 – November 2023  
+•  Built ML-powered churn prevention platform integrated into CX tools, enabling proactive outreach that increased B2B retention 13% within 3 
+
+months and prevented $2M+ in ARR churn 
+
+•  Led cross-functional teams to build AI-powered onboarding guides and chatbot using NLP, boosting new user deployment by 20% and reducing 
+
+support ticket volume 15% 
+
+•  Co-developed a new  customer-facing security score dashboard  with 1-click CTAs, driving 10 basis point improvement in aggregate security 
+
+posture across customer base 
+
+•  Converted 11% of free-tier users to paid customers through product telemetry analysis and targeted interventions, generating $3M+ in incremental 
+
+annual bookings 
+
+Sr. Product Manager, Data Platform | Malwarebytes, Santa Clara, CA | September 2020 – November 2022 
+Owned roadmap for a centralized enterprise data and experimentation platform powering analytics, A/B testing, and executive reporting. 
+•  Built self-serve experimentation platform that increased A/B test velocity 5X while enforcing statistical validity and data quality standards, enabling 
+
+product teams to ship 40+ validated experiments annually vs. 8 previously 
+
+•  Implemented  data  governance,  lifecycle  management,  and  analytics  infrastructure  on  AWS  and  Snowflake,  reducing  reporting  errors  65%  and 
+
+lowering storage costs 25% ($400K annual savings) 
+
+•  Established analytics layer using dbt and created executive dashboards in Tableau/Looker, becoming single source of truth for C-suite decision-
+
+making across product, sales, and marketing 
+
+Sr. Associate, Product Management | Tredence Inc., San Jose, CA | July 2019 – September 2020 
+Led AI/ML-driven analytics products focused on segmentation, forecasting, and performance validation for enterprise clients.  
+•  Delivered executive analytics platforms validating product and GTM strategy, influencing $50M+ investment decisions  
+•  Drove 11% increase in client bookings and 8% revenue lift through data-backed recommendations 
+
+Product Strategy & Analytics | MobilityWare, Irvine, CA | July 2017 – March 2019 
+•  Enhanced user navigation and optimized in-app store pricing through machine learning algorithms and A/B testing, resulting in a $2M increase in 
+
+annual revenue and improved player retention. 
+
+•  Delivered critical insights to leadership, helping define KPIs and core features for a strategic roadmap that increased engagement by 15%. 
+
+Early Career Experience (pre-2017) - Developed analytical skills along with experiences in process improvement & team leadership. 
+•  YP.com | YellowPages.com LLC: Developed pricing strategies aligned with customer value delivery, driving $1.5M in annual revenue.  
+•  The Walt Disney Company: Automated data visualization processes using SQL and Tableau, reducing reporting time by 30%.  
+•  Micro Labs Limited: Managed supply chain analytics, driving $7M in sales by optimizing inventory levels.  
+•  Ernst & Young (EY): Conducted financial risk assessments (derivative valuation) for global clients, delivering timely risk insights.  
+
+Education 
+USC  Marshall  Business  School                                                                                                                                                                          Los  Angeles,  CA,  USA                                                                                                                                                           
+Master of Science - Business Analytics                                                                                                                                                      December 2015 
+
+Indian School of Business (ISB)                                                                                                                                                                         Hyderabad, India 
+Executive Program in Business Analytics                                                                                                                                                          August 2014  
+
+RV College of Engineering | Visvesvaraya Technological University                                                                                                             Bangalore, India 
+Bachelor of Engineering - Industrial Engineering & Management                                                                                                                    August 2009 
+
+Core Competencies 
+•  AI  &  Data  Platform  Strategy  |  Experimentation  Design  |  ROI  &  KPI  Frameworks  for  Product  Adoption  |  API  |  GTM  Enablement  |  Analytics 
+
+Platforms & Measurement Systems | A/B Testing | Product Led Growth | Cross-Functional Leadership | Executive Communication  
+•  Tools & Tech: SQL · Python · R · Tableau · Snowflake · AWS · Amplitude · Airflow · Looker · Cursor · Salesforce · Pendo · Figma 
+•  Certifications: PMC  Level  II  - Product Management  &  Product Marketing  (Pragmatic  Institute), Generative  AI Fundamentals  & Applying  AI 
+Principles  (Google  Cloud),  Data  Science  in  Python  (UMich),  Data  Visualization  and  Communication  with  Tableau  (Duke  University),  Digital 
+Product Management: (University of Virginia), Advanced Google Analytics                                                    
+
+ 
+ 
+ 
+ 
+                                                                                                                                                      
+ 
+ 
+ 
+ 
+ 
+   
+ 
+
+
+
+TARGET ROLE
+Technical Product Manager at Arize AI
+
+RELEVANT STRENGTHS
+• Product strategy & roadmap leadership
+• Data-driven decision making
+• SQL and analytics expertise
+• Cross-functional leadership
+• Growth and retention optimization
