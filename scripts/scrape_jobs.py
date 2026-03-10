@@ -1,27 +1,17 @@
 import requests
 import json
+import os
 import feedparser
-from bs4 import BeautifulSoup
 
 jobs = []
 
-def relevant_title(title):
-
-    keywords = [
-        "product manager",
-        "product management",
-        "product owner",
-        "technical product manager",
-        "growth product manager",
-        "ai product manager",
-        "data product manager",
-        "group product manager",
-        "product lead"
-    ]
-
-    title = title.lower()
-
-    return any(k in title for k in keywords)
+def add_job(title, company, location, url):
+    jobs.append({
+        "title": title,
+        "company": company,
+        "location": location,
+        "url": url
+    })
 
 
 def scrape_remoteok():
@@ -30,37 +20,16 @@ def scrape_remoteok():
 
     url = "https://remoteok.com/api"
 
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
+    data = requests.get(url).json()
 
-    try:
+    for job in data[1:50]:
 
-        response = requests.get(url, headers=headers)
-        data = response.json()
-
-        for job in data:
-
-            title = job.get("position")
-            company = job.get("company")
-            url = job.get("url")
-
-            if not title:
-                continue
-
-            if not relevant_title(title):
-                continue
-
-            jobs.append({
-                "title": title,
-                "company": company,
-                "location": "Remote",
-                "url": url,
-                "source": "RemoteOK"
-            })
-
-    except Exception as e:
-        print("RemoteOK failed:", e)
+        add_job(
+            job.get("position",""),
+            job.get("company",""),
+            "Remote",
+            job.get("url","")
+        )
 
 
 def scrape_workingnomads():
@@ -68,92 +37,70 @@ def scrape_workingnomads():
     print("Scraping WorkingNomads RSS...")
 
     feed = feedparser.parse(
-        "https://www.workingnomads.com/jobsapi/job_feed?category=product"
+        "https://www.workingnomads.com/jobsapi/job_feed"
     )
 
-    for entry in feed.entries:
+    for entry in feed.entries[:50]:
 
-        title = entry.title
-        link = entry.link
+        add_job(
+            entry.title,
+            "Unknown",
+            "Remote",
+            entry.link
+        )
+def scrape_ai_jobs():
 
-        if not relevant_title(title):
-            continue
+    print("Scraping AI Jobs RSS...")
 
-        jobs.append({
-            "title": title,
-            "company": "Unknown",
-            "location": "Remote",
-            "url": link,
-            "source": "WorkingNomads"
-        })
+    feed = feedparser.parse(
+        "https://aijobs.com/feed/"
+    )
 
+    for entry in feed.entries[:50]:
 
-def scrape_yc():
+        add_job(
+            entry.title,
+            "AI Company",
+            "Remote",
+            entry.link
+        )
 
-    print("Scraping YC Jobs...")
+def scrape_weworkremotely():
 
-    url = "https://www.workatastartup.com/jobs"
+    print("Scraping WeWorkRemotely RSS...")
 
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
+    feed = feedparser.parse(
+        "https://weworkremotely.com/remote-jobs.rss"
+    )
 
-    try:
+    for entry in feed.entries[:50]:
 
-        page = requests.get(url, headers=headers)
-
-        soup = BeautifulSoup(page.text, "html.parser")
-
-        for a in soup.find_all("a"):
-
-            title = a.text.strip()
-
-            if not relevant_title(title):
-                continue
-
-            link = "https://www.workatastartup.com" + a.get("href", "")
-
-            jobs.append({
-                "title": title,
-                "company": "YC Startup",
-                "location": "Unknown",
-                "url": link,
-                "source": "YC"
-            })
-
-    except Exception as e:
-        print("YC scraping failed:", e)
+        add_job(
+            entry.title,
+            "Unknown",
+            "Remote",
+            entry.link
+        )
 
 
 def save_jobs():
 
     print("Saving jobs...")
 
-    unique = []
-    seen = set()
-
-    for job in jobs:
-
-        key = job["title"] + job["company"]
-
-        if key not in seen:
-            seen.add(key)
-            unique.append(job)
+    os.makedirs("../jobs", exist_ok=True)
 
     with open("../jobs/scraped_jobs.json", "w") as f:
-
-        json.dump(unique, f, indent=2)
-
-    print("Total jobs collected:", len(unique))
+        json.dump(jobs, f, indent=2)
 
 
 def main():
 
     scrape_remoteok()
     scrape_workingnomads()
-    scrape_yc()
-
+    scrape_weworkremotely()
+    scrape_ai_jobs()
     save_jobs()
 
 
-main()
+if __name__ == "__main__":
+    main()

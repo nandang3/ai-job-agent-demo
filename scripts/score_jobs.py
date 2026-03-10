@@ -1,49 +1,52 @@
 import json
+import os
 
-# Load scraped jobs
-with open("../jobs/scraped_jobs.json") as f:
+INPUT_FILE = "../jobs/scraped_jobs.json"
+OUTPUT_FILE = "../jobs/filtered_jobs.json"
+
+with open(INPUT_FILE) as f:
     jobs = json.load(f)
 
-# Keywords describing your profile
 keywords = [
+    "product",
     "product manager",
-    "product management",
-    "growth",
-    "data",
+    "pm",
     "ai",
-    "analytics",
+    "machine learning",
+    "data",
     "platform",
-    "api",
-    "technical product",
-    "strategy"
 ]
 
-filtered_jobs = []
+scored_jobs = []
 
 for job in jobs:
 
-    title = job["title"].lower()
+    text = (
+        job["title"].lower()
+        + job["company"].lower()
+        + job["location"].lower()
+    )
 
     score = 0
 
     for word in keywords:
-        if word in title:
-            score += 2
-
-    # bonus scoring
-    if "senior" in title:
-        score += 1
-
-    if "lead" in title:
-        score += 1
+        if word in text:
+            score += 1
 
     job["score"] = score
 
-    if score >= 3:
-        filtered_jobs.append(job)
+    scored_jobs.append(job)
 
-with open("../jobs/filtered_jobs.json","w") as f:
-    json.dump(filtered_jobs,f,indent=2)
+# sort by best match
+scored_jobs = sorted(scored_jobs, key=lambda x: x["score"], reverse=True)
 
-print("Total jobs:",len(jobs))
-print("High match jobs:",len(filtered_jobs))
+# keep top 50 jobs
+filtered_jobs = scored_jobs[:50]
+
+os.makedirs("../jobs", exist_ok=True)
+
+with open(OUTPUT_FILE, "w") as f:
+    json.dump(filtered_jobs, f, indent=2)
+
+print("Total jobs scraped:", len(jobs))
+print("Jobs returned to dashboard:", len(filtered_jobs))
