@@ -1,9 +1,19 @@
 import streamlit as st
 import json
 import os
+import subprocess
 
 st.title("AI Job Search Agent")
+st.caption("AI agents are discovering fresh jobs...")
 
+if st.button("Discover Latest Jobs"):
+
+    with st.spinner("AI agents scanning job sources..."):
+
+        subprocess.run(["python", "scripts/scrape_jobs.py"])
+        subprocess.run(["python", "scripts/score_jobs.py"])
+
+    st.success("New jobs discovered!")
 query = st.text_input(
     "Ask the AI agent:",
     placeholder="Find me product manager jobs at AI startups"
