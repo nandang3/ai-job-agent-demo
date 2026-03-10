@@ -39,7 +39,20 @@ else:
             st.subheader(job["title"])
             st.write(f"Company: {job['company']}")
             st.write(f"Location: {job['location']}")
+# Simple AI-style match score
+keywords = ["product", "ai", "data", "analytics"]
 
+score = 5
+
+title_lower = job["title"].lower()
+
+for word in keywords:
+    if word in title_lower:
+        score += 1
+
+score = min(score, 10)
+
+st.write(f"Match Score: {score}/10")
             st.markdown(f"[Apply Here]({job['url']})")
 
             st.divider()
