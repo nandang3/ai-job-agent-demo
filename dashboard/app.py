@@ -3,7 +3,10 @@ import json
 import os
 
 st.title("AI Job Search Agent")
-
+query = st.text_input(
+    "Ask the AI agent:",
+    placeholder="Find me product manager jobs at AI startups"
+)
 # Get project root
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,7 +34,15 @@ else:
         st.warning("Job file exists but no jobs were found.")
 
     else:
+if query:
 
+    query_lower = query.lower()
+
+    jobs = [
+        j for j in jobs
+        if query_lower in j["title"].lower()
+        or query_lower in j["company"].lower()
+    ]
         st.success(f"{len(jobs)} jobs loaded")
 
         for job in jobs:
